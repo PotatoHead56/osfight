@@ -17,7 +17,7 @@ export function JoinTeaser() {
         ?
       </div>
       <p className="max-w-xl text-[16px] leading-relaxed text-dim">
-        上傳一張家中物品的照片，它就會變成像素選手，加入這場大混戰。
+        上傳一張物品的照片，它就會變成擂台選手，加入這場大混戰。
       </p>
       <button
         type="button"
