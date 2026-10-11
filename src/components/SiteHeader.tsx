@@ -10,7 +10,7 @@ export function SiteHeader() {
           href="/"
           className="text-[24px] leading-none text-gold [text-shadow:2px_2px_0_var(--color-blood)]"
         >
-          OSFIGHT
+          ALL FIGHT
         </Link>
         <nav aria-label="主選單">
           <ul className="flex gap-1 text-[12px] sm:gap-4 sm:text-[16px]">

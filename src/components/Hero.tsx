@@ -47,7 +47,7 @@ export function Hero() {
       <div className="parallax-y flex flex-col items-center gap-6 text-center [--speed:0.3] sm:gap-8">
         <p className="bg-blood px-3 py-1 text-[12px] text-ink">ROUND 1</p>
         <h1 className="text-[48px] leading-none text-gold [text-shadow:4px_4px_0_var(--color-blood)] sm:text-[72px] sm:[text-shadow:6px_6px_0_var(--color-blood)] lg:text-[96px] lg:[text-shadow:8px_8px_0_var(--color-blood)]">
-          OSFIGHT
+          ALL FIGHT
         </h1>
         <p className="text-[16px] sm:text-[24px]">我家擂臺・萬物皆可戰</p>
         <p className="max-w-xl text-[16px] leading-relaxed text-dim">
