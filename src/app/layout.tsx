@@ -12,8 +12,8 @@ const cubic = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ALL FIGHT｜我家擂臺選手名鑑",
-  description: "家裡的每一樣東西都是擂臺選手。認識他們的數值、必殺技與故事。",
+  title: "ALL FIGHT｜選手名鑑",
+  description: "每一樣東西都是擂臺選手。認識他們的數值、必殺技與故事。",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 sm:flex-row sm:items-start sm:justify-between sm:px-8">
         <div className="flex flex-col gap-3">
           <p className="text-[24px] leading-none text-gold">ALL FIGHT</p>
-          <p className="text-[16px] text-dim">我家擂臺・萬物皆可戰</p>
+          <p className="text-[16px] text-dim">萬物皆可戰</p>
         </div>
 
         <nav aria-label="頁尾選單">

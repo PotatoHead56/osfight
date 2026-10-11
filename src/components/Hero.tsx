@@ -49,9 +49,9 @@ export function Hero() {
         <h1 className="text-[48px] leading-none text-gold [text-shadow:4px_4px_0_var(--color-blood)] sm:text-[72px] sm:[text-shadow:6px_6px_0_var(--color-blood)] lg:text-[96px] lg:[text-shadow:8px_8px_0_var(--color-blood)]">
           ALL FIGHT
         </h1>
-        <p className="text-[16px] sm:text-[24px]">我家擂臺・萬物皆可戰</p>
+        <p className="text-[16px] sm:text-[24px]">萬物皆可戰</p>
         <p className="max-w-xl text-[16px] leading-relaxed text-dim">
-          家裡的每一樣東西，其實都是深藏不露的擂臺選手。這裡記錄了他們的數值、必殺技，還有不為人知的故事。
+          每一樣東西，其實都是深藏不露的擂臺選手。這裡記錄了他們的數值、必殺技，還有不為人知的故事。
         </p>
         <a
           href="#roster"
