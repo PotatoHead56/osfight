@@ -37,16 +37,15 @@ export function FighterCard({
   fighter: Fighter;
   index: number;
 }) {
-  const { name, title, division, stats, move, bio, accent, image } = fighter;
+  const { name, title, stats, move, bio, accent, image } = fighter;
 
   return (
     <article
       style={{ "--accent": accent } as CSSProperties}
       className="pixel-box flex w-full flex-col bg-panel"
     >
-      <header className="flex items-center justify-between bg-(--accent) px-3 py-1 text-[12px] text-ink">
-        <span>NO.{String(index + 1).padStart(2, "0")}</span>
-        <span>{division}</span>
+      <header className="bg-(--accent) px-3 py-1 text-[12px] text-ink">
+        NO.{String(index + 1).padStart(2, "0")}
       </header>
 
       <div className="flex flex-1 flex-col gap-4 p-4">

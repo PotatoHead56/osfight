@@ -8,7 +8,6 @@ export type Fighter = {
   id: string;
   name: string;
   title: string;
-  division: string;
   stats: FighterStats;
   move: string;
   bio: string;
@@ -26,7 +25,6 @@ export const fighters: Fighter[] = [
     image: "/fighters/fan.png",
     name: "電風扇",
     title: "旋風狂人",
-    division: "客廳組",
     stats: { attack: 7, defense: 4, speed: 9 },
     move: "三段變速龍捲風",
     bio: "夏天的絕對王者。只要插頭還在，就沒有人能靠近他三步之內。",
@@ -37,7 +35,6 @@ export const fighters: Fighter[] = [
     image: "/fighters/mug.png",
     name: "馬克杯",
     title: "滾燙鐵壁",
-    division: "廚房組",
     stats: { attack: 5, defense: 9, speed: 2 },
     move: "熱茶潑灑",
     bio: "外表厚實、內心滾燙。唯一的弱點是桌子邊緣。",
@@ -48,7 +45,6 @@ export const fighters: Fighter[] = [
     image: "/fighters/remote.png",
     name: "遙控器",
     title: "失蹤的刺客",
-    division: "客廳組",
     stats: { attack: 6, defense: 3, speed: 10 },
     move: "沙發縫隱身術",
     bio: "需要他的時候永遠找不到，不需要的時候就坐在他上面。",
@@ -59,7 +55,6 @@ export const fighters: Fighter[] = [
     image: "/fighters/slipper.png",
     name: "拖鞋",
     title: "玄關雙煞",
-    division: "玄關組",
     stats: { attack: 9, defense: 5, speed: 7 },
     move: "老媽飛踢",
     bio: "永遠成雙出擊。據說被他擊中的蟑螂沒有一隻能活著離開。",
@@ -70,7 +65,6 @@ export const fighters: Fighter[] = [
     image: "/fighters/lamp.png",
     name: "檯燈",
     title: "深夜守望者",
-    division: "書房組",
     stats: { attack: 4, defense: 6, speed: 5 },
     move: "刺眼閃光",
     bio: "陪你熬過每一個死線的夜晚，脖子可以彎成任何角度。",
@@ -81,7 +75,6 @@ export const fighters: Fighter[] = [
     image: "/fighters/pillow.png",
     name: "抱枕",
     title: "溫柔的重砲",
-    division: "臥室組",
     stats: { attack: 3, defense: 10, speed: 4 },
     move: "催眠壓制",
     bio: "看起來人畜無害，但一旦被他抱住，沒有人能準時起床。",

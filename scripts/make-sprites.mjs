@@ -1,7 +1,9 @@
-// Turns the raw photos in /photos into fixed-size pixel-art sprites in /public/fighters:
-// background removed, subject centred, hard pixel edges and a dark outline.
-// Usage: npm run sprites   (photos/fan.jpg -> public/fighters/fan.png)
-import { mkdir, readdir } from "node:fs/promises";
+// Turns raw photos into fixed-size pixel-art sprites: background removed,
+// subject centred, hard pixel edges and a dark outline.
+//
+//   npm run sprites                              every photo in /photos -> /public/fighters
+//   node scripts/make-sprites.mjs <in> <out.png> one photo (used by the upload form)
+import { mkdir, readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
@@ -21,10 +23,6 @@ const COLOURS = 24;
 const OUTLINE = [5, 4, 10];
 // Pixels the cutout marks as less opaque than this are dropped.
 const ALPHA_CUTOFF = 128;
-
-const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const sourceDir = path.join(root, "photos");
-const outputDir = path.join(root, "public", "fighters");
 
 // Makes every pixel fully opaque or fully transparent, then draws a 1px outline
 // on the transparent pixels that touch the subject.
@@ -56,20 +54,9 @@ function hardenAndOutline(pixels, size) {
   return pixels;
 }
 
-await mkdir(outputDir, { recursive: true });
-
-const photos = (await readdir(sourceDir)).filter((file) =>
-  /\.(jpe?g|png|webp)$/i.test(file),
-);
-
-for (const file of photos) {
-  const output = path.join(outputDir, `${path.parse(file).name}.png`);
-
+async function makeSprite(input, output) {
   // Bake in the EXIF orientation from phone cameras before cutting out.
-  const upright = await sharp(path.join(sourceDir, file))
-    .rotate()
-    .png()
-    .toBuffer();
+  const upright = await sharp(await readFile(input)).rotate().png().toBuffer();
   const cutout = await removeBackground(
     new Blob([upright], { type: "image/png" }),
   );
@@ -91,13 +78,32 @@ for (const file of photos) {
     .raw()
     .toBuffer({ resolveWithObject: true });
 
+  await mkdir(path.dirname(output), { recursive: true });
   await sharp(hardenAndOutline(data, SPRITE_SIZE), {
     raw: { width: SPRITE_SIZE, height: SPRITE_SIZE, channels: 4 },
   })
     .png({ palette: true, colours: COLOURS, dither: 0 })
     .toFile(output);
-
-  console.log(`${file} -> ${path.relative(root, output)}`);
 }
 
-console.log(`Done: ${photos.length} sprite(s) at ${SPRITE_SIZE}x${SPRITE_SIZE}.`);
+const [input, output] = process.argv.slice(2);
+
+if (input && output) {
+  await makeSprite(input, output);
+} else {
+  const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
+  const sourceDir = path.join(root, "photos");
+  const outputDir = path.join(root, "public", "fighters");
+
+  const photos = (await readdir(sourceDir)).filter((file) =>
+    /\.(jpe?g|png|webp)$/i.test(file),
+  );
+  for (const file of photos) {
+    const sprite = path.join(outputDir, `${path.parse(file).name}.png`);
+    await makeSprite(path.join(sourceDir, file), sprite);
+    console.log(`${file} -> ${path.relative(root, sprite)}`);
+  }
+  console.log(
+    `Done: ${photos.length} sprite(s) at ${SPRITE_SIZE}x${SPRITE_SIZE}.`,
+  );
+}

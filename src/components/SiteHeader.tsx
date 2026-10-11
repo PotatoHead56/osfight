@@ -12,7 +12,7 @@ export function SiteHeader() {
           OSFIGHT
         </Link>
         <nav aria-label="主選單">
-          <ul className="flex gap-1 text-[16px] sm:gap-4">
+          <ul className="flex gap-1 text-[12px] sm:gap-4 sm:text-[16px]">
             {NAV_LINKS.map(({ href, label }) => (
               <li key={href}>
                 <Link

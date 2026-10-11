@@ -1,5 +1,6 @@
 import { FighterCard } from "@/components/FighterCard";
 import { Hero } from "@/components/Hero";
+import { JoinTeaser } from "@/components/JoinTeaser";
 import { Marquee } from "@/components/Marquee";
 import { fighters } from "@/data/fighters";
 
@@ -24,6 +25,17 @@ export default function Home() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section
+        id="join"
+        className="mx-auto w-full max-w-6xl scroll-mt-24 px-4 pb-16 sm:px-8 sm:pb-24"
+      >
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b-4 border-paper pb-3 sm:mb-10">
+          <h2 className="text-[24px] leading-none sm:text-[36px]">報名參賽</h2>
+          <p className="text-[12px] text-dim">A NEW CHALLENGER!</p>
+        </div>
+        <JoinTeaser />
       </section>
     </main>
   );

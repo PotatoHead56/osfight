@@ -12,10 +12,10 @@
   "dependencies": {
     "next": "16.4.0",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "@imgly/background-removal-node": "^1.4.5"
   },
   "devDependencies": {
-    "@imgly/background-removal-node": "^1.4.5",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
