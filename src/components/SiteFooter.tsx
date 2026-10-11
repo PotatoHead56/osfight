@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV_LINKS } from "@/data/navigation";
+import { NAV_LINKS, SOURCE_URL } from "@/data/navigation";
 
 export function SiteFooter() {
   return (
@@ -23,6 +23,17 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href={SOURCE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block py-1 hover:text-gold"
+              >
+                <span aria-hidden>▶ </span>
+                原始碼
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
