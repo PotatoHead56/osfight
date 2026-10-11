@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CoachWelcome } from "@/components/CoachWelcome";
 import { NAV_LINKS } from "@/data/navigation";
 
 export function SiteHeader() {
@@ -26,6 +27,7 @@ export function SiteHeader() {
           </ul>
         </nav>
       </div>
+      <CoachWelcome />
     </header>
   );
 }

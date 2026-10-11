@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-// Publishes the scroll position as --scroll-y so the parallax-x / parallax-y
+// Publishes the scroll position as --scroll-y so the parallax-y / parallax-bg
 // utilities in globals.css can move layers at their own --speed.
 export function ParallaxScroll() {
   useEffect(() => {

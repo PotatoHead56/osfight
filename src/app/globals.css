@@ -34,9 +34,9 @@
   will-change: translate;
 }
 
-@utility parallax-x {
-  translate: calc(var(--scroll-y) * var(--speed, 0) * 1px) 0;
-  will-change: translate;
+/* Slides a tiled background inside a fixed frame instead of moving the element. */
+@utility parallax-bg {
+  background-position: 0 calc(var(--scroll-y) * var(--speed, 0) * 1px);
 }
 
 @utility starfield {

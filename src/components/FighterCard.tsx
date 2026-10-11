@@ -50,7 +50,16 @@ export function FighterCard({
 
       <div className="flex flex-1 flex-col gap-4 p-4">
         <div className="flex items-center gap-4 sm:flex-col sm:items-stretch">
-          <div className="aspect-square w-[136px] shrink-0 border-4 border-ink bg-ink sm:w-auto">
+          <div className="relative isolate aspect-square w-[136px] shrink-0 overflow-hidden border-4 border-ink bg-ink sm:w-auto">
+            {/* Two star layers drifting at different speeds behind the sprite. */}
+            <div
+              aria-hidden
+              className="starfield parallax-bg absolute inset-0 -z-10 opacity-50 [--speed:0.12] [background-size:120px_120px]"
+            />
+            <div
+              aria-hidden
+              className="starfield parallax-bg absolute inset-0 -z-10 [--speed:0.3]"
+            />
             {image ? (
               <Image
                 src={image}

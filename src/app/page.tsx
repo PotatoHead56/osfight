@@ -1,14 +1,12 @@
 import { FighterCard } from "@/components/FighterCard";
 import { Hero } from "@/components/Hero";
 import { JoinTeaser } from "@/components/JoinTeaser";
-import { Marquee } from "@/components/Marquee";
 import { fighters } from "@/data/fighters";
 
 export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
       <Hero />
-      <Marquee />
 
       <section
         id="roster"
